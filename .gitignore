@@ -1,0 +1,11 @@
+# Python cache files - auto-generated, no need to track
+__pycache__/
+*.pyc
+*.pyo
+
+# Personal expense data - don't publish your own expenses publicly
+expenses.csv
+
+# Common editor/OS junk files
+.vscode/
+.DS_Store
