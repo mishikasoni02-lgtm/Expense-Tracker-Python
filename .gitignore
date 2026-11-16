@@ -1,11 +1,20 @@
-# Python cache files - auto-generated, no need to track
-__pycache__/
-*.pyc
-*.pyo
 
-# Personal expense data - don't publish your own expenses publicly
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Personal expense data
 expenses.csv
 
-# Common editor/OS junk files
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables and secrets
+.env
+
+# Editor and operating system files
 .vscode/
 .DS_Store
+Thumbs.db
