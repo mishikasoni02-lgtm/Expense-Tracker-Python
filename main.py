@@ -1,9 +1,9 @@
+
 """
 main.py
 -------
 Entry point for the Expense Tracker application.
-Shows the main menu and calls functions from expense_manager.py
-based on the user's choice.
+Displays the main menu and calls functions from expense_manager.py.
 
 Run this file to start the program:
     python main.py
@@ -34,32 +34,45 @@ def print_menu():
 
 
 def main():
-    """Main program loop. Keeps running until the user chooses to exit."""
-    # Make sure the CSV file exists before doing anything else
+    """Main program loop."""
+
     initialize_csv()
 
     while True:
         print_menu()
         choice = input("Choose an option (1-7): ").strip()
 
-        if choice == "1":
-            add_expense()
-        elif choice == "2":
-            view_expenses()
-        elif choice == "3":
-            search_expenses()
-        elif choice == "4":
-            edit_expense()
-        elif choice == "5":
-            delete_expense()
-        elif choice == "6":
-            monthly_summary()
-        elif choice == "7":
-            print("\nThanks for using Expense Tracker. Goodbye!")
-            break
-        else:
-            print("Invalid choice. Please enter a number between 1 and 7.")
+        try:
+            if choice == "1":
+                add_expense()
+
+            elif choice == "2":
+                view_expenses()
+
+            elif choice == "3":
+                search_expenses()
+
+            elif choice == "4":
+                edit_expense()
+
+            elif choice == "5":
+                delete_expense()
+
+            elif choice == "6":
+                monthly_summary()
+
+            elif choice == "7":
+                print("\nThanks for using Expense Tracker. Goodbye!")
+                break
+
+            else:
+                print("Invalid choice. Please enter a number between 1 and 7.")
+
+        except (ValueError, OSError, KeyError) as error:
+            print(f"An error occurred: {error}")
+            print("Please try again.")
 
 
 if __name__ == "__main__":
     main()
+
